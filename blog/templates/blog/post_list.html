@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Jonny's Django Blog</title>
+</head>
+<body>
+    <header>
+        <header>
+            <h1><a href="/static/pdf/HFPython.pdf" target="_blank">Jonny's Python Book</a></h1>
+        </header>
+        
+    </header>
+    {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
+</body>
+</html>
